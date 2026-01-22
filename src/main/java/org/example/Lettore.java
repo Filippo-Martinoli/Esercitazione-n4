@@ -2,9 +2,9 @@ package org.example;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class lettore implements Runnable{
+public class Lettore implements Runnable{
     String musica;
-    public lettore (String musica){
+    public Lettore(String musica){
         this.musica=musica;
     }
     public void leggi(){
@@ -23,5 +23,7 @@ public class lettore implements Runnable{
     public void run() {
         leggi();
     }
+public persona leggiDalFile() {
 
+}
 }

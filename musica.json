@@ -1,1 +1,31 @@
-File in output
+{
+  "Utente": [
+    {
+      "idUtente": "FilippoMartinoli",
+      "nome": "Filippo",
+      "cognome": "Martinoli",
+      "email": "filippomartinoli07@gmail.com",
+      "nazionalita": "Italia",
+      "dataScadenzaContratto": ""
+    }
+  ],
+  "Playlist": [
+    {
+      "idPlaylist": "FMLEM234",
+      "titolo": "Relax",
+      "dataCreazione": "22/01/2026"
+    }
+  ],
+  "Brano": [
+    {
+      "idBrano": "",
+      "titolo": "Lo so che",
+      "durata": "2:00",
+      "dataPubblicazione": "26/03/2020",
+      "urlStreaming": "",
+      "numeroAscolti": "",
+      "numeroLike": ""
+    }
+  ]
+}
+
