@@ -6,45 +6,33 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
-public class scrittore implements Runnable{
-
-    String musica;
-
-    public Scrittore(String nomeFile){
-        this.musica = musica;
+public class scrittore implements Runnable {
+    private String Musica;
+    public scrittore(String nomeFile) {
+        this.Musica = nomeFile;
     }
-
     @Override
     public void run() {
         scrivi();
     }
-
-    public void scrivi(){
-        BufferedWriter br=null;
-
+    public void scrivi() {
+        BufferedWriter br = null;
         try {
-
-            br = new BufferedWriter(
-                    new FileWriter(musica));
-
+            br = new BufferedWriter(new FileWriter(Musica));
             br.write("File in output");
-            br.write("\n\r");
-
+            br.write("\n");
             br.flush();
         } catch (IOException ex) {
-            Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally{
-            if (br!=null)
+            Logger.getLogger(scrittore.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (br != null)
                 try {
-                    //4)chiudo lo stream in uscita
                     br.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                    Logger.getLogger(scrittore.class.getName()).log(Level.SEVERE, null, ex);
 
+                }
         }
     }
 }
+
