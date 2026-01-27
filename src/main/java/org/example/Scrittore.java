@@ -1,54 +1,35 @@
 package org.example;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Scrittore implements Runnable {
-    private String Musica;
-    private Object Brano;
+    private String musica;
+    private Brano brano;
 
-    public Scrittore(String nomeFile) {
-        this.Musica = nomeFile;
+    public Scrittore(String file) {
+        this.musica = file;
+    }
+
+    public void setBrano(Brano brano) {
+        this.brano = brano;
     }
 
     @Override
     public void run() {
-        scrivi();
+        scriviJson();
     }
 
-    public void scrivi() {
-        BufferedWriter br = null;
-        try {
-            br = new BufferedWriter(new FileWriter(Musica));
-            br.write("File in output");
-            br.write("\n");
-            br.flush();
-        } catch (IOException ex) {
-            Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (br != null)
-                try {
-                    br.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-
-                }
-        }
-    }
-
-    public void salvaSuFile(Brano brano) throws IOException {
+    public void scriviJson() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String json = gson.toJson(Brano);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("musica.json"))) {
+        String json = gson.toJson(brano);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(musica))) {
             writer.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
-
