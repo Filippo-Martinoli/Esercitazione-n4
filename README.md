@@ -2,13 +2,11 @@
 
 ## Descrizione
 
-Questo progetto Java permette di salvare e leggere informazioni su brani musicali utilizzando file JSON.  
-Ogni brano è rappresentato dalla classe Brano, che contiene dati come ID, titolo, durata, data di pubblicazione, numero di ascolti e like.  
+Questo progetto Java permette di salvare e leggere informazioni su brani musicali utilizzando file JSON. Ogni brano è rappresentato dalla classe Brano, che contiene dati come ID, titolo, durata, data di pubblicazione, numero di ascolti e like.  
 
 ## Funzionamento
 
-La classe Scrittore si occupa di convertire un oggetto Brano in JSON e salvarlo su file, mentre la classe Lettore legge il file e ricostruisce l’oggetto, mostrando i dati a schermo.  
-La scrittura e la lettura vengono gestite tramite thread separati, garantendo un comportamento asincrono simile a operazioni reali di I/O.  
+La classe Scrittore si occupa di convertire un oggetto Brano in JSON e salvarlo su file mentre la classe Lettore legge il file e ricostruisce l’oggetto, mostrando i dati a schermo. La scrittura e la lettura vengono gestite tramite thread separati.
 
 ## Obiettivi
 
