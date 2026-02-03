@@ -7,14 +7,16 @@ public class Brano {
     private String DataPubblicazione;
     private int numeroAscolti;
     private int numeroLike;
+    private String cantante;
 
-    public Brano(String idBrano, String titolo, String durata, String dataPubblicazione, int numeroAscolti, int numeroLike) {
+    public Brano(String idBrano, String titolo, String durata, String dataPubblicazione, int numeroAscolti, int numeroLike, String cantante) {
         this.idBrano = idBrano;
         this.titolo = titolo;
         this.durata = durata;
         DataPubblicazione = dataPubblicazione;
         this.numeroAscolti = numeroAscolti;
         this.numeroLike = numeroLike;
+        this.cantante = cantante;
     }
 
     public String getIdBrano() {
@@ -64,7 +66,14 @@ public class Brano {
     public void setNumeroLike(int numeroLike) {
         this.numeroLike = numeroLike;
     }
+    
+public String getIdcantante() {
+        return idcantante;
+    }
 
+    public void setIdcantante(String idcantante) {
+        this.idcantante = idcantante;
+    }
     @Override
     public String toString() {
         return "Brano{" +
@@ -74,6 +83,7 @@ public class Brano {
                 ", DataPubblicazione='" + DataPubblicazione + '\'' +
                 ", numeroAscolti=" + numeroAscolti +
                 ", numeroLike=" + numeroLike +
+            ", cantante='" + cantante + '\'' +
                 '}';
     }
 }
