@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        Brano b1 = new Brano ("FMLEM234", "Lo So Che", "3:01", "15/11/2024 ", 44000000, 44000 );
+        Brano b1 = new Brano ("FMLEM234", "Lo So Che", "3:01", "15/11/2024 ", 44000000, 44000,"Capo Plaza");
         String file = "Musica.json";
         Scrittore s = new Scrittore(file);
         s.setBrano(b1);
