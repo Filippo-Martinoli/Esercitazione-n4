@@ -6,7 +6,7 @@ public class Brano {
     private String cantante;
     private String durata;
     private int annoPubblicazione;
-    private long numeroAscolti;
+    private int numeroAscolti;
     private int numeroLike;
 
     public Brano(String idBrano, String titolo, String cantante,
@@ -42,7 +42,7 @@ public class Brano {
         return annoPubblicazione;
     }
 
-    public long getNumeroAscolti() {
+    public int getNumeroAscolti() {
         return numeroAscolti;
     }
 
