@@ -3,88 +3,63 @@ package org.example;
 public class Brano {
     private String idBrano;
     private String titolo;
-    private String durata;
-    private String DataPubblicazione;
-    private int numeroAscolti;
-    private int numeroLike;
     private String cantante;
+    private String durata;
+    private int annoPubblicazione;
+    private long numeroAscolti;
+    private int numeroLike;
 
-    public Brano(String idBrano, String titolo, String durata, String dataPubblicazione, int numeroAscolti, int numeroLike, String cantante) {
+    public Brano(String idBrano, String titolo, String cantante,
+                 String durata, int annoPubblicazione,
+                 long numeroAscolti, int numeroLike) {
+
         this.idBrano = idBrano;
         this.titolo = titolo;
+        this.cantante = cantante;
         this.durata = durata;
-        DataPubblicazione = dataPubblicazione;
+        this.annoPubblicazione = annoPubblicazione;
         this.numeroAscolti = numeroAscolti;
         this.numeroLike = numeroLike;
-        this.cantante = cantante;
     }
 
     public String getIdBrano() {
         return idBrano;
     }
 
-    public void setIdBrano(String idBrano) {
-        this.idBrano = idBrano;
-    }
-
     public String getTitolo() {
         return titolo;
     }
 
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
+    public String getCantante() {
+        return cantante;
     }
 
     public String getDurata() {
         return durata;
     }
 
-    public void setDurata(String durata) {
-        this.durata = durata;
+    public int getAnnoPubblicazione() {
+        return annoPubblicazione;
     }
 
-    public String getDataPubblicazione() {
-        return DataPubblicazione;
-    }
-
-    public void setDataPubblicazione(String dataPubblicazione) {
-        DataPubblicazione = dataPubblicazione;
-    }
-
-    public int getNumeroAscolti() {
+    public long getNumeroAscolti() {
         return numeroAscolti;
-    }
-
-    public void setNumeroAscolti(int numeroAscolti) {
-        this.numeroAscolti = numeroAscolti;
     }
 
     public int getNumeroLike() {
         return numeroLike;
     }
 
-    public void setNumeroLike(int numeroLike) {
-        this.numeroLike = numeroLike;
-    }
-    
-public String getIdcantante() {
-        return idcantante;
-    }
-
-    public void setIdcantante(String idcantante) {
-        this.idcantante = idcantante;
-    }
     @Override
     public String toString() {
         return "Brano{" +
                 "idBrano='" + idBrano + '\'' +
                 ", titolo='" + titolo + '\'' +
+                ", cantante='" + cantante + '\'' +
                 ", durata='" + durata + '\'' +
-                ", DataPubblicazione='" + DataPubblicazione + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
                 ", numeroAscolti=" + numeroAscolti +
                 ", numeroLike=" + numeroLike +
-            ", cantante='" + cantante + '\'' +
                 '}';
     }
 }
-
