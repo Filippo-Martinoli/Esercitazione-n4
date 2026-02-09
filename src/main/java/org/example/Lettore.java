@@ -1,34 +1,21 @@
 package org.example;
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class Lettore implements Runnable {
-    private String musica;
-    public Lettore(String file) {
-        this.musica = file;
-    }
-    public Brano leggiDalFile() throws FileNotFoundException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(musica))) {
-            Gson gson = new Gson();
-            return gson.fromJson(reader, Brano.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    private String file;
+    private GestioneFile gestioneFile;
+
+    public Lettore(String file, GestioneFile gestioneFile) {
+        this.file = file;
+        this.gestioneFile = gestioneFile;
     }
 
     @Override
     public void run() {
-        try {
-            Brano b = leggiDalFile();
-            if (b != null) {
-                System.out.println(b);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        System.out.println("\n LETTURA FILE ");
+        gestioneFile.leggiBuffered(file);
+        System.out.println("\n BRANI LETTI ");
+        for (Brano b : gestioneFile.leggiGson(file)) {
+            System.out.println(b);
         }
     }
 }
